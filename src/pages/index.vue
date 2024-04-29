@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { MaisonRecord } from '@/type'
+import MaisonCard from '@/components/MaisonCard.vue'
 interface MaisonRecord {
     adresse: string;
     collectionId: string;
@@ -67,4 +68,5 @@ const maisonListe:MaisonRecord[] = [
 
 <template>
   <h1 class="text-2xl">Bonjour monde !</h1>
+  <MaisonCard/>
 </template>
