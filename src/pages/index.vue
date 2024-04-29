@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { MaisonRecord } from '@/type'
 interface MaisonRecord {
     adresse: string;
     collectionId: string;
