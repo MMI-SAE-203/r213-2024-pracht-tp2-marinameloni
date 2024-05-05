@@ -1,72 +1,122 @@
 <script setup lang="ts">
-import type { MaisonRecord } from '@/type'
+import type { MaisonRecord } from '@/pocketbase-type'
 import MaisonCard from '@/components/MaisonCard.vue'
-interface MaisonRecord {
-    adresse: string;
-    collectionId: string;
-    collectionName: string;
-    created: string;
-    favori: boolean;
-    id: string;
-    image: string;
-    nbChambres: number;
-    nbSdb: number;
-    nomMaison: string;
-    prix: number;
-    surface: number;
-    updated: string;
-}
-const maisonListe:MaisonRecord[] = [
-    {
-        "adresse": "2821 Lake Sevilla, Palm Harbor, TX",
-        "collectionId": "sidpkt9hmbfwoeb",
-        "collectionName": "maison",
-        "created": "2023-05-01 14:00:54.598Z",
-        "favori": false,
-        "id": "64l3n8nar836i5j",
-        "image": "pexels_binyamin_mellish_106399_bnHdy6H03e.jpg",
-        "nbChambres": 4,
-        "nbSdb": 2,
-        "nomMaison": "Beverly Springfield",
-        "prix": 2700,
-        "surface": 45,
-        "updated": "2024-04-02 13:49:11.230Z"
-    },
-    {
-        "adresse": "2699 Green Valley, Highland Lake",
-        "collectionId": "sidpkt9hmbfwoeb",
-        "collectionName": "maison",
-        "created": "2024-04-02 13:48:47.643Z",
-        "favori": true,
-        "id": "lo831zeg10hpm9y",
-        "image": "pexels_binyamin_mellish_106399_YpoLMcQJsi.png",
-        "nbChambres": 4,
-        "nbSdb": 2,
-        "nomMaison": "Palm Harbor",
-        "prix": 2095,
-        "surface": 42,
-        "updated": "2024-04-02 13:48:47.643Z"
-    },
-    {
-        "adresse": "909 Woodland St, Michigan, IN",
-        "collectionId": "sidpkt9hmbfwoeb",
-        "collectionName": "maison",
-        "created": "2024-04-02 13:52:17.823Z",
-        "favori": false,
-        "id": "s1zuhj19x8eb242",
-        "image": "faulkner_ave_ZHz3nhmJzC.png",
-        "nbChambres": 4,
-        "nbSdb": 3,
-        "nomMaison": "Faulkner Ave",
-        "prix": 4550,
-        "surface": 80,
-        "updated": "2024-04-02 13:52:17.823Z"
-    }
+
+
+const maisonsListe:MaisonRecord[] = [
+  {
+    "adresse": "3 Rue du petit chien",
+    "collectionId": "abyuoh3k1hxjurd",
+    "collectionName": "maison",
+    "created": "2024-04-11 14:08:03.261Z",
+    "favori": true,
+    "id": "121212121212121",
+    "images": [
+      "84ff1da3ede305a3646602fdeef757d6f80d2cfd_BgEGpSSt3W.jpg"
+    ],
+    "nbChambres": 3,
+    "nbSdb": 2,
+    "nomMaison": "Villa dans le sud",
+    "prix": 700000,
+    "surface": 140,
+    "updated": "2024-04-11 14:20:08.852Z"
+  },
+  {
+    "adresse": "5 Impasse du radiateur",
+    "collectionId": "abyuoh3k1hxjurd",
+    "collectionName": "maison",
+    "created": "2024-04-11 14:10:51.556Z",
+    "favori": false,
+    "id": "123456789568342",
+    "images": [
+      "adobe_stock_55289985_1280x855_NEK2U2grri.webp",
+      "aesthetically_pleasing_movies_12_6297551ce687d_880_aZLlzJ85yv.jpg"
+    ],
+    "nbChambres": 2,
+    "nbSdb": 1,
+    "nomMaison": "Petite maison de campagne",
+    "prix": 400000,
+    "surface": 90,
+    "updated": "2024-04-11 14:10:51.556Z"
+  },
+  {
+    "adresse": "67E Rue de l'étudiant assoiffé",
+    "collectionId": "abyuoh3k1hxjurd",
+    "collectionName": "maison",
+    "created": "2024-04-11 14:12:42.815Z",
+    "favori": false,
+    "id": "846152548174625",
+    "images": [
+      "03aec8de_cae9_4a0d_9f5e_b1cfa7a3d0d3_xD97Gt9uJM.jpg",
+      "crop_603c5bc3899f1ae2c8aedc6406f58696_26368_650x429_QDENiaqFGo.jpeg"
+    ],
+    "nbChambres": 1,
+    "nbSdb": 1,
+    "nomMaison": "Appartement étudiant en ville",
+    "prix": 150000,
+    "surface": 25,
+    "updated": "2024-04-11 14:13:06.722Z"
+  },
+  {
+    "adresse": "1 Chemin du funny member",
+    "collectionId": "abyuoh3k1hxjurd",
+    "collectionName": "maison",
+    "created": "2024-04-11 14:15:10.696Z",
+    "favori": true,
+    "id": "999999999999999",
+    "images": [
+      "s_l1200_hEwSaGUiR4.webp"
+    ],
+    "nbChambres": 10,
+    "nbSdb": 8,
+    "nomMaison": "Château Cinnamo",
+    "prix": 3000000,
+    "surface": 5000,
+    "updated": "2024-04-11 14:23:51.055Z"
+  },
+  {
+    "adresse": "12 Impasse du bacon",
+    "collectionId": "abyuoh3k1hxjurd",
+    "collectionName": "maison",
+    "created": "2024-04-11 14:19:21.801Z",
+    "favori": true,
+    "id": "555556364678654",
+    "images": [
+      "index_hfm6gWPrcY.webp"
+    ],
+    "nbChambres": 0,
+    "nbSdb": 0,
+    "nomMaison": "Maison Roblox",
+    "prix": 50,
+    "surface": 1,
+    "updated": "2024-04-11 14:19:21.801Z"
+  },
+  {
+    "adresse": "Rue du koopa troopa",
+    "collectionId": "abyuoh3k1hxjurd",
+    "collectionName": "maison",
+    "created": "2024-04-11 14:22:13.123Z",
+    "favori": true,
+    "id": "485767685812345",
+    "images": [
+      "sm3_dl_toad_house_4yyGL9bW36.webp"
+    ],
+    "nbChambres": 1,
+    "nbSdb": 0,
+    "nomMaison": "Maison papy champi",
+    "prix": 150385,
+    "surface": 29,
+    "updated": "2024-04-11 14:22:13.123Z"
+  }
 ]
 
 </script>
 
 <template>
-  <h1 class="text-2xl">Bonjour monde !</h1>
-  <MaisonCard/>
+  <MaisonCard v-bind="maisonsListe[0]"/>
+  <MaisonCard v-bind="maisonsListe[1]"/>
+  <MaisonCard v-bind="maisonsListe[2]"/>
+  <MaisonCard v-bind="maisonsListe[3]"/>
+  <MaisonCard v-bind="maisonsListe[4]"/>
+
 </template>
