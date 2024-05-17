@@ -229,7 +229,7 @@ Faire le fichier `/src/pages/offres/[id].vue`
 
 ```html
 <ul>
-  <li v-for="uneMaison of maisonsListe" :v-key="uneMaison.id">
+  <li v-for="uneMaison of maisonsListe" :key="uneMaison.id">
     <RouterLink
       :to="{
         name: '/offres/[id]',
