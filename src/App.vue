@@ -18,6 +18,9 @@ onErrorCaptured((err, instance, info) => {
         <li>
           <RouterLink to="/offres" class="text-pink-300 underline">Toutes les offres</RouterLink>
         </li>
+        <li>
+          <RouterLink to="/agents" class="text-pink-300 underline">Tous les agents</RouterLink>
+        </li>
       </ul>
     </nav>
   </header>

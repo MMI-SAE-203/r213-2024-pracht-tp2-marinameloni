@@ -48,7 +48,27 @@ export async function surfaceORprice(surface, prix) {
 }
 
 // Etape 19
-export async function agentParID(id) {
+export async function allAgents() {
+  const records = await pb.collection('agent').getFullList()
+  return records
+}
+
+export async function id_agent(id) {
   const records = await pb.collection('agent').getOne(`${id}`)
   return records
+}
+
+
+
+
+export async function allagentsSorted() {
+  const records = await pb.collection('agent').getFullList({
+    sort: 'Nom'
+  })
+  return records
+}
+
+export async function getAgentPhoto(id) {
+  const agent = await pb.collection('agent').getOne(`${id}`);
+  return agent.Photo;
 }
