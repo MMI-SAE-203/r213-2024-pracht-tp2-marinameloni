@@ -12,11 +12,11 @@ console.log (`props : ` , {...props})
 >
   <div class="self-stretch flex-grow-0 flex-shrink-0 h-[200px]">
     
-    <ImgPb
-      :record="props"
-      :filename="props.image"
-      class="flex-grows-0 flex-shrink-0 w-full h-full"
-    />
+<ImgPb
+  :record="props"
+  :filename="props.image"
+  class="w-full h-full object-cover rounded-t-lg transform hover:scale-105 transition-transform duration-200"
+/>
   </div>
   <div
     class="flex flex-col justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-4 px-5 py-7"
