@@ -13,7 +13,10 @@ onErrorCaptured((err, instance, info) => {
     <nav>
       <ul>
         <li>
-          <RouterLink to="/" class="text-red-500 underline"> Accueil </RouterLink>
+          <RouterLink to="/" class="text-pink-300 underline"> Accueil </RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/offres" class="text-pink-300 underline">Toutes les offres</RouterLink>
         </li>
       </ul>
     </nav>

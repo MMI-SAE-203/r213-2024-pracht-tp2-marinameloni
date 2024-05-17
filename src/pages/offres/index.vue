@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import MaisonCard from '@/components/MaisonCard.vue'
-import { allMaisons, allMaisonsFavoris, pb } from '@/backend';
+import { allMaisons, allMaisonsFavoris, allMaisonsSorted, pb } from '@/backend';
 
 //{filter:'favori = true',}
-const maisonsListe = await allMaisonsFavoris();
+const maisonsListe = await allMaisonsSorted();
 </script>
 
 <template>
