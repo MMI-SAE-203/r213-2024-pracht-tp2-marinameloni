@@ -1,7 +1,7 @@
 import PocketBase from 'pocketbase'
 import { type TypedPocketBase } from './pocketbase-types.js'
 
-export const pb = new PocketBase(import.meta.env.VITE_URL_POCKETBASE) as TypedPocketBase
+export const pb = new PocketBase('https://r213.mmeloni.fr:443')
 
 // Etape 8
 export async function allMaisons() {
@@ -72,3 +72,43 @@ export async function getAgentPhoto(id) {
   const agent = await pb.collection('agent').getOne(`${id}`);
   return agent.Photo;
 }
+
+export async function addNewMaison(newMaison) {
+  await pb.collection('maison').create(newMaison);
+
+}
+
+
+export async function DeleteMaisonbyId(id){
+  await pb.collection('maison').delete(`${id}`);
+}
+
+export async function DeleteAgentbyId(id) {
+  await pb.collection('agent').delete(`${id}`)
+}
+
+export async function UpdateMaisonbyId(id, newMaison){
+  await pb.collection('maison').update(`${id}`, newMaison);
+}
+
+export async function allMaisonsSortedAgent() {
+  const records = await pb.collection('maison').getFullList({
+    sort: 'id_agent'
+  })
+  return records
+}
+
+export async function bySurfaceAgent(superficie, agent) {
+  const records = await pb.collection('maison').getFullList({
+    filter: `surface > '${superficie}' && id_agent = '${agent}'`
+  })
+  return records
+}
+
+export async function maisonFavoriAgent(id) {
+  const records = await pb.collection('maison').getFullList({
+    filter: `favori = true && id_agent = '${id}'`
+  })
+  return records
+}
+
